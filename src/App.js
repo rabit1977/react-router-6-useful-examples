@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className='h-screen w-full mx-4 '>
+      <h1 className='text-6xl pt-8 pb-10  font-semibold w-screen flex justify-center'>
+        Bookkeeper!
+      </h1>
+      <nav className='border-b-4 border-red-500 pb-4 text-xl font-semibold  flex justify-around'>
+        <Link
+          className='hover:bg-slate-100 px-2 transition duration-75'
+          to='/invoices'
         >
-          Learn React
-        </a>
-      </header>
+          Invoices
+        </Link>
+        <Link
+          className='hover:bg-slate-100 px-2 transition duration-75'
+          to='/expenses'
+        >
+          Expenses
+        </Link>
+      </nav>
+      <Outlet />
     </div>
   );
 }
