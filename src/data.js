@@ -3,7 +3,7 @@ let invoices = [
     name: 'Santa Monica',
     number: 1995,
     amount: '$10,800',
-    due: '12/05/1995',
+    condition: '12/05/1995',
   },
   {
     name: 'Stankonia',
@@ -30,14 +30,55 @@ let invoices = [
     due: '01/27/1998',
   },
 ];
+let expenses = [
+  {
+    name: 'Food',
+    madeIn: 1995,
+    amount: '$10',
+    condition: 'fresh',
+  },
+  {
+    name: 'Cars',
+    madeIn: 2000,
+    amount: '$2,000',
+    condition: 'used',
+  },
+  {
+    name: 'Books',
+    madeIn: 2003,
+    amount: '$19,5',
+    condition: 'old',
+  },
+  {
+    name: 'Mobile Phone',
+    madeIn: 2022,
+    amount: '$1,4000',
+    condition: 'newes',
+  },
+  {
+    name: 'Laptop',
+    madeIn: 2021,
+    amount: '$1,600',
+    condition: 'Almost new',
+  },
+];
 
 export function getInvoices() {
   return invoices;
 }
-
+export function getExpenses() {
+  return expenses;
+}
 export function getInvoice(number) {
   return invoices.find((invoice) => invoice.number === number);
 }
 export function deleteInvoice(number) {
   invoices = invoices.filter((invoice) => invoice.number !== number);
+}
+
+export function getExpense(number) {
+  return expenses.find((expense) => expense.madeIn === number);
+}
+export function deleteExpense(number) {
+  expenses = expenses.filter((expense) => expense.madeIn !== number);
 }

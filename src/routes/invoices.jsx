@@ -9,10 +9,10 @@ export default function Invoices() {
 
   return (
     <div className='flex w-2/3 m-auto'>
-      <nav className='block  flex-1 border-r-4 border-red-500 '>
-        <div className='mt-10'>
+      <nav className='  '>
+        <div className='mt-10 flex flex-col flex-1'>
           <input
-            className='border-2 border-slate-600 rounded-md p-2 outline-none'
+            className='border-2 border-slate-600 w-60 rounded-md p-2 outline-none'
             placeholder='search something'
             value={searchParams.get('filter') || ''}
             onChange={(event) => {
@@ -34,15 +34,19 @@ export default function Invoices() {
             })
             .map((invoice) => (
               <QueryNavLink
+                style={({ isActive }) => {
+                  return {
+                    display: 'block',
+                    margin: '.3rem 0',
+                    color: isActive ? 'red' : '',
+                  };
+                }}
+                className='flex  font-bold mt-4 
+            text-lg transition duration-150 hover:bg-slate-200 rounded-md w-60 mb-1 p-2'
                 key={invoice.number}
                 to={`/invoices/${invoice.number}`}
               >
-                <button
-                  className='flex font-bold mt-4 
-            text-lg transition duration-150 hover:bg-slate-200 w-60 mb-1 p-2'
-                >
-                  {invoice.name}
-                </button>
+                {invoice.name}
               </QueryNavLink>
             ))}
         </div>

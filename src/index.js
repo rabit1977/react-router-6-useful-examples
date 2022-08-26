@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Expenses from './routes/expenses';
 import Invoices from './routes/invoices';
 import Invoice from './routes/invoice';
+import Expense from './routes/expense';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,25 +16,36 @@ root.render(
         {/* nested route */}
         <Route path='/' element={<App />}>
           <Route path='expenses' element={<Expenses />} />
-          <Route path='invoices' element={<Invoices />} >
+          <Route path='invoices' element={<Invoices />}>
+            <Route
+              index
+              element={
+                <main className='flex  pt-10 text-lg'>
+                  <p className='ml-60'>Select an invoice</p>
+                </main>
+              }
+            />
+            <Route path=':invoiceId' element={<Invoice />} />
+          </Route>
+          <Route path='expenses' element={<Expenses />}>
+            <Route
+              index
+              element={
+                <main className='flex  pt-10 text-lg'>
+                  <p className='ml-60'>Select an expense</p>
+                </main>
+              }
+            />
+            <Route path=':expenseId' element={<Expense />} />
+          </Route>
           <Route
-            index
+            path='*' // mathces only when no other routes do match
             element={
               <main className='p-4'>
-                <p>Select an invoice</p>
+                <p>There's nothing here</p>
               </main>
             }
           />
-          <Route path=':invoiceId' element={<Invoice />} />
-        </Route>
-        <Route
-          path='*' // mathces only when no other routes do match
-          element={
-            <main className='p-4'>
-              <p>There's nothing here</p>
-            </main>
-          }
-        />
         </Route>
       </Routes>
     </BrowserRouter>
