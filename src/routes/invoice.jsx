@@ -18,6 +18,7 @@ export default function Invoice() {
         <p>Due Date: {invoice.condition}</p>
         <p>
           <button
+            className='border-slate-400/80 w-full mt-6 shadow-md text-slate-900 hover:bg-slate-600 hover:text-white text-xl border-4 px-4 py-1 rounded-full'
             onClick={() => {
               deleteInvoice(invoice.number);
               navigate('/invoices', +location.search);
