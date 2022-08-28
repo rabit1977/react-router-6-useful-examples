@@ -11,7 +11,7 @@ export default function Invoices() {
     <div className='flex w-2/3 justify-around m-auto'>
       <nav className='flex-col w-1/4'>
         <input
-          className='border-2 border-slate-600 mt-10 w-full rounded-md p-2 outline-none'
+          className='border-2 border-slate-600 mt-10 w-full rounded-md p-2 outline-none hover:shadow-md'
           placeholder='search something'
           value={searchParams.get('filter') || ''}
           onChange={(event) => {

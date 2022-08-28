@@ -10,7 +10,7 @@ export default function Expenses() {
     <div className='flex w-2/3 justify-around m-auto'>
       <nav className='flex-col w-1/4'>
         <input
-          className='border-2 border-slate-600 mt-10 w-full rounded-md p-2 outline-none'
+          className='border-2 border-slate-600 mt-10 w-full rounded-md p-2 outline-none hover:shadow-md'
           placeholder='search some expenses'
           value={searchParams.get('filter') || ''}
           onChange={(event) => {
@@ -40,7 +40,7 @@ export default function Expenses() {
                     color: isActive ? 'red' : '',
                   };
                 }}
-                className='flex divide-y-4 divide-solid font-semibold mt-4 
+                className='flex font-semibold mt-4 
                 text-xl rounded-md mb-1 p-2'
                 key={expense.madeIn}
                 to={`/expenses/${expense.madeIn}`}
