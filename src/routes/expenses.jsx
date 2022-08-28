@@ -10,8 +10,8 @@ export default function Expenses() {
     <div className='flex w-2/3 justify-around m-auto'>
       <nav className='flex-col w-1/4'>
         <input
-          className='border-2 border-slate-600 mt-10 w-full rounded-md p-2 outline-none hover:shadow-md'
-          placeholder='search some expenses'
+          className='border-2 mt-10 w-full rounded-full p-2 hover:bg-red-600 text-white hover:placeholder:text-white hover:ring-2 ring-black/50 text-xl outline-none hover:shadow-md transition duration-200'
+          placeholder='search some expenses '
           value={searchParams.get('filter') || ''}
           onChange={(event) => {
             let filter = event.target.value;

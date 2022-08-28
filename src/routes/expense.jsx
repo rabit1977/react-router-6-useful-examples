@@ -18,7 +18,7 @@ export default function Expense() {
         <li>Due Date: {expense.condition}</li>
         <li>
           <button
-            className='border-slate-400/80 w-full mt-6 shadow-md text-slate-900 hover:bg-slate-600 hover:text-white text-xl border-4 px-4 py-1 rounded-full'
+            className='border-2 w-full mt-6 shadow-md text-black/70 font-semibold tracking-wide hover:bg-red-600 hover:text-white text-xl hover:ring-2 ring-black/50 px-4 py-1 transition duration-200 rounded-full'
             onClick={() => {
               deleteInvoice(expense.madeIn);
               navigate('/expenses', +location.search);
