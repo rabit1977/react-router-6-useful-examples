@@ -9,8 +9,8 @@ export default function Expense() {
   let expense = getExpense(parseInt(params.expenseId, 10));
 
   return (
-    <main className='flex flex-1 flex-col items-end text-lg mt-8 '>
-      <ul className='space-y-3 '>
+    <main className='w-1/4 text-lg mt-8'>
+      <ul className='space-y-3 divide-y-2 divide-solid divide-slate-300'>
         <li>Items condition: {expense.amount} </li>
         <li>
           {expense.name}: {expense.madeIn}

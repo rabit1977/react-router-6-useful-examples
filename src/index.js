@@ -20,8 +20,10 @@ root.render(
             <Route
               index
               element={
-                <main className='flex  pt-10 text-lg'>
-                  <p className='ml-60'>Select an invoice</p>
+                <main className='pt-10 w-1/4 text-lg'>
+                  <p className='border-b -4 pb-3 border-slate-300'>
+                    Select an invoice
+                  </p>
                 </main>
               }
             />
@@ -31,8 +33,10 @@ root.render(
             <Route
               index
               element={
-                <main className='flex  pt-10 text-lg'>
-                  <p className='ml-60'>Select an expense</p>
+                <main className='pt-10 w-1/4 text-lg'>
+                  <p className='border-b -4 pb-3 border-slate-300'>
+                    Select an expense
+                  </p>
                 </main>
               }
             />

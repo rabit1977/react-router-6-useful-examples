@@ -8,23 +8,23 @@ export default function Invoices() {
   let [searchParams, setSearchParams] = useSearchParams({ replace: true });
 
   return (
-    <div className='flex w-2/3 m-auto'>
-      <nav className='  '>
-        <div className='mt-10 flex flex-col flex-1'>
-          <input
-            className='border-2 border-slate-600 w-60 rounded-md p-2 outline-none'
-            placeholder='search something'
-            value={searchParams.get('filter') || ''}
-            onChange={(event) => {
-              let filter = event.target.value;
+    <div className='flex w-2/3 justify-around m-auto'>
+      <nav className='flex-col w-1/4'>
+        <input
+          className='border-2 border-slate-600 mt-10 w-full rounded-md p-2 outline-none'
+          placeholder='search something'
+          value={searchParams.get('filter') || ''}
+          onChange={(event) => {
+            let filter = event.target.value;
 
-              if (filter) {
-                setSearchParams({ filter }, { replace: true });
-              } else {
-                setSearchParams({}, { replace: true });
-              }
-            }}
-          />
+            if (filter) {
+              setSearchParams({ filter }, { replace: true });
+            } else {
+              setSearchParams({}, { replace: true });
+            }
+          }}
+        />
+        <div className='divide-y-2 divide-slate-300'>
           {invoices
             .filter((invoice) => {
               let filter = searchParams.get('filter');
@@ -41,8 +41,8 @@ export default function Invoices() {
                     color: isActive ? 'red' : '',
                   };
                 }}
-                className='flex  font-bold mt-4 
-            text-lg transition duration-150 hover:bg-slate-200 rounded-md w-60 mb-1 p-2'
+                className='flex divide-y-4 divide-solid font-semibold mt-4 
+            text-xl rounded-md mb-1 p-2'
                 key={invoice.number}
                 to={`/invoices/${invoice.number}`}
               >

@@ -9,8 +9,8 @@ export default function Invoice() {
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
 
   return (
-    <main className='flex flex-1 flex-col items-end text-lg mt-8 '>
-      <div className='space-y-3 '>
+    <main className='w-1/4 text-lg mt-8'>
+      <div className='space-y-3 divide-y-2 divide-solid divide-slate-300'>
         <h2>Total Due: {invoice.amount} </h2>
         <p>
           {invoice.name}: {invoice.number}
